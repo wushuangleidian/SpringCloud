@@ -1,0 +1,10 @@
+server:
+  port: 8763
+
+spring:
+  application:
+    name: service-hi #这在以后的服务与服务之间相互调用一般都是根据这个name 。
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/ #配置文件中注明自己的服务注册中心的地址

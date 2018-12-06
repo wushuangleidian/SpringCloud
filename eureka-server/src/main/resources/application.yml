@@ -1,0 +1,15 @@
+server:
+  port: 8761
+eureka:
+  instance:
+    metadata-map:
+      instanceId: ${spring.application.name}:${random.value} #不然可能注册到Eureka的相同服务的多个实例只有一个生效。
+  client: #在默认情况下erureka server也是一个eureka client ,必须要指定一个 server
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  application:
+    name: eurka-server
